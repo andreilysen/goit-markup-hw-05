@@ -106,6 +106,7 @@ p {
     padding-bottom: 32px;
     transition-property: color;
     transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     color: var(--title-text-color);
 
@@ -150,11 +151,11 @@ p {
 
 /* герой */
 
-.hero{
+.hero-section{
     text-align: center;  
 }
 
-.overlay{
+.hero .overlay{
     max-width: 1600px;
     height: 600px;
     margin: 0 auto;
@@ -168,8 +169,6 @@ p {
 .hero > .container{
     text-align: center; 
 }
-
-
 
 .hero-title{
     width: 696px;
@@ -288,9 +287,12 @@ p {
     margin-right: 30px;
 }
 
-.img{
+.img-list{
     position: relative;
-    height: 294px;
+}
+
+.img{
+    display: block;
 }
 
 .img-text{
@@ -383,6 +385,7 @@ p {
     color: var(--color-icon);
     transition-property: color, background-color;
     transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -424,6 +427,7 @@ p {
     align-items: center;
     transition-property: color, border-color;
     transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover,
@@ -556,6 +560,7 @@ p {
     padding: 6px 22px;
     transition-property: color, background-color, box-shadow;
     transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     color:var(--title-text-color);
 }
@@ -596,10 +601,45 @@ p {
     margin-bottom: 0;
 }
 
-.project-img {
-    display: block;
+.project-link{
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.project-link:hover,
+.project-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);   
+}
+.project-img{
+    position: relative;
+    overflow: hidden;
+}
+
+.project-img .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(100%);
+    transition: transform 250ms linear;
+}
+
+.overlay-text{
+    padding: 63px 24px;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+}
+
+.project-link:hover .overlay,
+.project-link:focus .overlay{
+    transform: translateY(0);
+}
 
 .project-title{
     border-right: 1px solid #EEEEEE;
@@ -630,13 +670,3 @@ p {
     color: var(--main-text-color);
 }
 
-.project-link{
-    transition-property: box-shadow;
-    transition-duration: 250ms;
-}
-
-.project-link:hover,
-.project-link:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-    
-}
